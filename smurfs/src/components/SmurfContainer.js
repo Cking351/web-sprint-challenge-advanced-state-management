@@ -1,6 +1,7 @@
 import React, { useState, createContext, useEffect } from 'react';
 import axios from 'axios';
 import SmurfCard from './SmurfCard';
+import SmurfForm from './SmurfForm';
 
 // context API
 export const SmurfContext = createContext();
@@ -9,7 +10,7 @@ const SmurfContainer = () => {
 
     const [smurf, setSmurf] = useState([])
 
-
+    // This gets smurfs
     useEffect(() => {
         axios.get('http://localhost:3333/smurfs')
         .then(response => {
@@ -20,13 +21,21 @@ const SmurfContainer = () => {
         })
     })
 
+        // this posts smurfs
+    const addSmurf = smurf => {
+        axios.post('http://localhost:3333/smurfs', smurf)
+        .then(response => {})
+        .catch(error => {console.log("You cant just make smurfs..", error)})
+    }
+
+    
+
     return (
-        <SmurfContext.Provider value={{ smurf, setSmurf }}>
+        <SmurfContext.Provider value={{ smurf, setSmurf, addSmurf }}>
         <div>
             <h1>Hello</h1>
-            {smurf.map((item) => (
                 <SmurfCard />
-            ))}
+            <SmurfForm />
         </div>
         </SmurfContext.Provider>
     )
