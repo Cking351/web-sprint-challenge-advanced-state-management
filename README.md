@@ -37,8 +37,8 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 > This section should include instruction for the sprint challenge. These should only cover things that are _not_ being evaluated by the challenge itself, e.g. environment/project setup, link to a starter project, etc. In general, this will be the following Git fork, clone, branch, commit, push, create pull request flow, though may need to be adapted for some specific challenges.
 
- [ ] `fork & clone` this repository.
-- [ ] `cd` into the forked copy of this repository.
+ [x] `fork & clone` this repository.
+- [x] `cd` into the forked copy of this repository.
 - [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
 - [ ] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
 - [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
