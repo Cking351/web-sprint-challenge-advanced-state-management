@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
 import {SmurfContext} from './SmurfContainer';
+import { Button } from 'reactstrap'
+import '../smurf.css'
 
 const SmurfForm = () => {
     const [newSmurf, setNewSmurf] = useState({
@@ -19,11 +21,17 @@ const SmurfForm = () => {
 
     const submitHandler = () => {
         addSmurf(newSmurf)
+        document.getElementById("smurf-form").reset();
+    }
+
+    // this will clear form after POST
+    const clearForm = () => {
+        document.getElementById("smurf-form").reset();
     }
 
     return(
         <div>
-            <form onChange={event => changeHandler(event)} onSubmit={event => submitHandler(event)}>
+            <form id="smurf-form" onChange={event => changeHandler(event)} onSubmit={event => submitHandler(event)}>
             <input 
             type='text'
             name='name'
@@ -46,7 +54,8 @@ const SmurfForm = () => {
             // onChange={event => changeHandler(event)}
             />
             </form>
-            <button onClick={event => submitHandler(event)}>Smurf Stork</button>
+            <br></br>
+            <Button class='my-btn' color='primary' onClick={event => submitHandler(event)}>The Smurf Stork</Button>
         </div>
     )
 }

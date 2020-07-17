@@ -33,8 +33,7 @@ const SmurfContainer = () => {
     return (
         <SmurfContext.Provider value={{ smurf, setSmurf, addSmurf }}>
         <div>
-            <h1>Hello</h1>
-                <SmurfCard />
+            <SmurfCard />
             <SmurfForm />
         </div>
         </SmurfContext.Provider>

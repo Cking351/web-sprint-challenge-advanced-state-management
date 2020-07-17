@@ -1,13 +1,14 @@
 import React from 'react';
-
+import { Jumbotron } from 'reactstrap'
 
 const Smurfs = props => {
     return (
-        <div>
+        <Jumbotron>
         <h2>Name: {props.smurf.name}</h2>
         <h3>Age: {props.smurf.age}</h3>
         <h3>Height: {props.smurf.height}</h3>
-        </div>
+        <br></br>
+        </Jumbotron>
     )
 }
 
